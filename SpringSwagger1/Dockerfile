@@ -5,13 +5,13 @@ FROM maven:3.8.7-eclipse-temurin-21 AS build
 WORKDIR /app
 
 # Copia solo los archivos esenciales para descargar dependencias primero
-COPY SpringSwagger1/pom.xml .
+COPY pom.xml .
 
 # Descarga dependencias para aprovechar la caché de Docker
 RUN mvn dependency:go-offline
 
 # Ahora copia el resto del código fuente
-COPY SpringSwagger1/src src
+COPY src src
 
 # Compila el proyecto sin ejecutar pruebas
 RUN mvn clean package -DskipTests
