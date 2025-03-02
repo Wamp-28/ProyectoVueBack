@@ -5,7 +5,7 @@ FROM openjdk:21-jdk
 WORKDIR /app
 
 # Copiar el archivo JAR generado al contenedor
-COPY target/SpringSwagger1-0.0.1-SNAPSHOT.jar app.jar
+COPY SpringSwagger1/target/SpringSwagger1-0.0.1-SNAPSHOT.jar app.jar
 
 # Exponer el puerto en el que corre la aplicación (ajústalo según sea necesario)
 EXPOSE 8081
