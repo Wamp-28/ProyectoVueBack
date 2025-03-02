@@ -5,7 +5,7 @@ FROM maven:3.8.7-eclipse-temurin-21 AS build
 WORKDIR /app
 
 # Copia todos los archivos del proyecto
-COPY . .
+COPY main/java/com/example/SpringSwagger1 .
 
 # Compila el proyecto sin ejecutar pruebas
 RUN mvn clean package -DskipTests
